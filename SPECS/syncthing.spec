@@ -27,19 +27,27 @@ mkdir -p %{buildroot}/usr/bin/
 cd syncthing-linux-%{arch}-v%{version}/
 cp syncthing %{buildroot}/usr/bin/
 
+%if 0%{?rhel}  == 6
+mkdir -p %{buildroot}/etc/init.d/
+cp /root/supportfiles/syncthing  %{buildroot}/etc/init.d/
+%else
 mkdir -p %{buildroot}/etc/systemd/system/
 cp etc/linux-systemd/system/syncthing\@.service  %{buildroot}/etc/systemd/system/
 cp etc/linux-systemd/system/syncthing-resume.service  %{buildroot}/etc/systemd/system/
 mkdir -p %{buildroot}/etc/systemd/user/
 cp etc/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
-
+%endif 
 
 %files
 %defattr(-,root,root)
 /usr/bin/syncthing
+%if 0%{?rhel}  == 6
+/etc/init.d/syncthing
+%else
 /etc/systemd/system/syncthing@.service
 /etc/systemd/system/syncthing-resume.service
 /etc/systemd/user/syncthing.service
+%endif 
 
 %changelog
 * Thu Feb  9 2017 Pierre-Alain TORET <trevor@hydrobuilder.com>
