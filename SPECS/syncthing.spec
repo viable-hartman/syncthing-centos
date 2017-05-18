@@ -36,7 +36,10 @@ cp etc/linux-systemd/system/syncthing\@.service  %{buildroot}/etc/systemd/system
 cp etc/linux-systemd/system/syncthing-resume.service  %{buildroot}/etc/systemd/system/
 mkdir -p %{buildroot}/etc/systemd/user/
 cp etc/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
-%endif 
+%endif
+
+mkdir -p %{buildroot}/etc/syncthing/
+cp /root/supportfiles/config.xml  %{buildroot}/etc/syncthing/
 
 %files
 %defattr(-,root,root)
@@ -47,7 +50,8 @@ cp etc/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
 /etc/systemd/system/syncthing@.service
 /etc/systemd/system/syncthing-resume.service
 /etc/systemd/user/syncthing.service
-%endif 
+%endif
+/etc/syncthing/config.xml
 
 %changelog
 * Thu Feb  9 2017 Pierre-Alain TORET <trevor@hydrobuilder.com>
