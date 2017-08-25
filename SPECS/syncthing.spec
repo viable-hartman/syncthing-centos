@@ -2,6 +2,7 @@ Name:		syncthing
 Version:	0.14.36
 Release:	0%{?dist}
 Summary:	Open, trustworthy and decentralized sync
+InVersion:	0.8.7
 # Set to amd64 or 386
 %define arch	amd64
 
@@ -9,6 +10,7 @@ Group:		Applications/System
 License:	MPLv2
 URL:		https://github.com/syncthing/syncthing
 Source0:	https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-linux-%{arch}-v%{version}.tar.gz
+Source1:	https://github.com/syncthing/syncthing-inotify/releases/download/v%{InVersion}/syncthing-inotify-linux-%{arch}-v%{InVersion}.tar.gz
 
 Requires:	policycoreutils-python
 
@@ -21,10 +23,12 @@ it's transmitted over the Internet.
 %prep
 tar -zxf %{SOURCE0}
 cd syncthing-linux-%{arch}-v%{version}/
+tar -zxf %{SOURCE1}
 
 %install
 mkdir -p %{buildroot}/usr/bin/
 cd syncthing-linux-%{arch}-v%{version}/
+cp syncthing-inotify %{buildroot}/usr/bin/
 cp syncthing %{buildroot}/usr/bin/
 
 %if 0%{?rhel}  == 6
