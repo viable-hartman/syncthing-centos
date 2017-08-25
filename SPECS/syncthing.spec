@@ -48,6 +48,7 @@ cp /root/supportfiles/config.xml  %{buildroot}/etc/syncthing/
 %files
 %defattr(-,root,root)
 /usr/bin/syncthing
+/usr/bin/syncthing-inotify
 %if 0%{?rhel}  == 6
 /etc/init.d/syncthing
 %else
