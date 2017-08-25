@@ -8,7 +8,7 @@ Summary:	Open, trustworthy and decentralized sync
 Group:		Applications/System
 License:	MPLv2
 URL:		https://github.com/syncthing/syncthing
-Source0:	https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-linux-%{arch}-v%{version}.tar.gz
+Source0:	https://github.com/viable-hartman/syncthing/releases/download/v%{version}/syncthing-linux-%{arch}-v%{version}.tar.gz
 
 Requires:	policycoreutils-python
 
