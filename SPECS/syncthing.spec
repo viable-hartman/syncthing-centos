@@ -20,6 +20,7 @@ it's transmitted over the Internet.
 
 %prep
 tar -zxf %{SOURCE0}
+mv v%{version} syncthing-linux-%{arch}-v%{version}
 cd syncthing-linux-%{arch}-v%{version}/
 
 %install
