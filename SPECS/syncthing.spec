@@ -60,7 +60,7 @@ cp /root/supportfiles/config.xml  %{buildroot}/etc/syncthing/
 /etc/systemd/user/syncthing.service
 /etc/systemd/user/syncthing-inotify.service
 %endif
-/etc/syncthing/config.xml
+%attr(-, nginx, nginx) /etc/syncthing/config.xml
 
 %changelog
 * Thu Aug  24 2017 Trevor Hartman <trevor@hydrobuilder.com>
