@@ -37,9 +37,11 @@ cp /root/supportfiles/syncthing  %{buildroot}/etc/init.d/
 %else
 mkdir -p %{buildroot}/etc/systemd/system/
 cp /root/supportfiles/linux-systemd/system/syncthing\@.service %{buildroot}/etc/systemd/system/
+cp /root/supportfiles/linux-systemd/system/syncthing-inotify\@.service %{buildroot}/etc/systemd/system/
 cp /root/supportfiles/linux-systemd/system/syncthing-resume.service %{buildroot}/etc/systemd/system/
 mkdir -p %{buildroot}/etc/systemd/user/
 cp /root/supportfiles/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
+cp /root/supportfiles/linux-systemd/user/syncthing-inotify.service %{buildroot}/etc/systemd/user/
 %endif
 
 mkdir -p %{buildroot}/etc/syncthing/
@@ -53,8 +55,10 @@ cp /root/supportfiles/config.xml  %{buildroot}/etc/syncthing/
 /etc/init.d/syncthing
 %else
 /etc/systemd/system/syncthing@.service
+/etc/systemd/system/syncthing-inotify\@.service
 /etc/systemd/system/syncthing-resume.service
 /etc/systemd/user/syncthing.service
+/etc/systemd/user/syncthing-inotify.service
 %endif
 /etc/syncthing/config.xml
 
