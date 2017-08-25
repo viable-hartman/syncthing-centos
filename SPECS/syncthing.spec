@@ -55,7 +55,7 @@ cp /root/supportfiles/config.xml  %{buildroot}/etc/syncthing/
 /etc/init.d/syncthing
 %else
 /etc/systemd/system/syncthing@.service
-/etc/systemd/system/syncthing-inotify\@.service
+/etc/systemd/system/syncthing-inotify@.service
 /etc/systemd/system/syncthing-resume.service
 /etc/systemd/user/syncthing.service
 /etc/systemd/user/syncthing-inotify.service
