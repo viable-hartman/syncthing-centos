@@ -1,5 +1,5 @@
 Name:		syncthing
-Version:	0.14.27
+Version:	0.14.36
 Release:	0%{?dist}
 Summary:	Open, trustworthy and decentralized sync
 # Set to amd64 or 386
@@ -54,7 +54,10 @@ cp /root/supportfiles/config.xml  %{buildroot}/etc/syncthing/
 /etc/syncthing/config.xml
 
 %changelog
-* Thu Feb  9 2017 Pierre-Alain TORET <trevor@hydrobuilder.com>
+* Thu Aug  24 2017 Trevor Hartman <trevor@hydrobuilder.com>
+- Bump syncthing version 0.14.27 -> 0.14.36
+
+* Thu Jun  1 2017 Trevor Hartman <trevor@hydrobuilder.com>
 - Bump syncthing version 0.14.23 -> 0.14.27
 
 * Thu Feb  9 2017 Pierre-Alain TORET <pierre-alain.toret@protonmail.com>
