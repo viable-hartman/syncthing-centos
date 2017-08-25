@@ -8,7 +8,7 @@ Summary:	Open, trustworthy and decentralized sync
 Group:		Applications/System
 License:	MPLv2
 URL:		https://github.com/syncthing/syncthing
-Source0:	https://github.com/viable-hartman/syncthing/archive/v%{version}.tar.gz
+Source0:	https://github.com/syncthing/syncthing/releases/download/v%{version}/syncthing-linux-%{arch}-v%{version}.tar.gz
 
 Requires:	policycoreutils-python
 
@@ -20,7 +20,6 @@ it's transmitted over the Internet.
 
 %prep
 tar -zxf %{SOURCE0}
-mv syncthing-%{version} syncthing-linux-%{arch}-v%{version}
 cd syncthing-linux-%{arch}-v%{version}/
 
 %install
@@ -33,10 +32,10 @@ mkdir -p %{buildroot}/etc/init.d/
 cp /root/supportfiles/syncthing  %{buildroot}/etc/init.d/
 %else
 mkdir -p %{buildroot}/etc/systemd/system/
-cp etc/linux-systemd/system/syncthing\@.service  %{buildroot}/etc/systemd/system/
-cp etc/linux-systemd/system/syncthing-resume.service  %{buildroot}/etc/systemd/system/
+cp /root/supportfiles/linux-systemd/system/syncthing\@.service %{buildroot}/etc/systemd/system/
+cp /root/supportfiles/linux-systemd/system/syncthing-resume.service %{buildroot}/etc/systemd/system/
 mkdir -p %{buildroot}/etc/systemd/user/
-cp etc/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
+cp /root/supportfiles/linux-systemd/user/syncthing.service %{buildroot}/etc/systemd/user/
 %endif
 
 mkdir -p %{buildroot}/etc/syncthing/
