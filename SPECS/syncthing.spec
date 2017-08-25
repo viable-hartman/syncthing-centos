@@ -2,9 +2,9 @@ Name:		syncthing
 Version:	0.14.36
 Release:	0%{?dist}
 Summary:	Open, trustworthy and decentralized sync
-InVersion:	0.8.7
 # Set to amd64 or 386
 %define arch	amd64
+%define InVersion	0.8.7
 
 Group:		Applications/System
 License:	MPLv2
